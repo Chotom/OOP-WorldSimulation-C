@@ -7,6 +7,12 @@ Animal::Animal(int posX, int posY, World &world) : Organism(posX, posY, world) {
 	this->walkBoost = 0;
 }
 
+Animal::Animal(int posX, int posY, World& world, int strength) : Organism(posX, posY, world, strength) {
+	this->initiative = 1;
+	this->symbol = '@';
+	this->walkBoost = 0;
+}
+
 bool Animal::action() {
 	//randomise walking
 	int walkRange = 1;

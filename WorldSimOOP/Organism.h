@@ -15,6 +15,7 @@ protected:
 public:
 	Organism();
 	Organism(int, int, World&);
+	Organism(int, int, World&, int);
 	virtual ~Organism();
 	
 	virtual bool action() = 0;

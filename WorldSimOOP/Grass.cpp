@@ -1,7 +1,6 @@
 #include "Grass.h"
 
-Grass::Grass(int posX, int posY, World& world) : Plant(posX, posY, world)
-{ 
+Grass::Grass(int posX, int posY, World& world) : Plant(posX, posY, world) { 
 	this->symbol = '|';
 }
 

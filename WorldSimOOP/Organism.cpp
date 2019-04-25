@@ -17,6 +17,21 @@ Organism::Organism(int posX, int posY, World &world) {
 	this->canReproduce = 0;
 }
 
+Organism::Organism(int posX, int posY, World& world, int strength) {
+	this->posX = posX;
+	this->posY = posY;
+	this->world = &world;
+	this->initiative = 0;
+	this->strength = strength;
+	this->symbol = '.';
+	this->boost = 0;
+	this->canEscape = 0;
+	this->canDef = 0;
+	this->canPoison = 0;
+	this->canReproduce = 1;
+}
+
+
 //return false - attacker alive
 bool Organism::collision(Organism* org, int changeX, int changeY) {
 

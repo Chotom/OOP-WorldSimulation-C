@@ -4,25 +4,26 @@ Human::Human(int posX, int posY, World& world) : Animal(posX, posY, world) {
 	this->initiative = 4;
 	this->strength = 5;
 	this->symbol = 'H';
-	this->turnLeft = 0;
-	this->superAbility = 0;
 	this->canReproduce = 1;
 	this->cooldown = 0;
+}
+
+Human::Human(int posX, int posY, World& world, int strength, int cooldown) : Animal(posX, posY, world, strength) {
+	this->initiative = 4;
+	this->symbol = 'H';
+	this->cooldown = cooldown;
 }
 
 Human::~Human() {}
 
 bool Human::action() {
-	if (superAbility && turnLeft > 2) {
+	if (cooldown > 7) {
 		this->setWalkBoost(1);
-		this->turnLeft--;
 	}
-	else if (superAbility) {
+	else if (cooldown > 5) {
 		int walkBoostChange = rand() % 2;
 		if (walkBoostChange) setWalkBoost(1);
-		this->turnLeft--;
 	}
-	if (turnLeft == 0) superAbility = 0;
 
 	int walkRange = 1;
 	if (walkBoost) walkRange = 2;
@@ -74,9 +75,11 @@ bool Human::action() {
 }
 
 void Human::setSuperAbility() {
-	this->turnLeft = 5;
-	this->superAbility = 1;
 	this->cooldown = 10;
+}
+
+int Human::getCooldown() {
+	return this->cooldown;
 }
 
 Organism* Human::reproduce(int, int) {

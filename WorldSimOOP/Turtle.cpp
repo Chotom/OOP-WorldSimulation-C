@@ -6,6 +6,11 @@ Turtle::Turtle(int posX, int posY, World& world) : Animal(posX, posY, world) {
 	this->symbol = 't';
 	this->canDef = 1;
 }
+Turtle::Turtle(int posX, int posY, World& world, int strength) : Animal(posX, posY, world, strength) {
+	this->initiative = 1;
+	this->symbol = 'T';
+	this->canDef = 1;
+}
 
 Turtle::~Turtle() {}
 

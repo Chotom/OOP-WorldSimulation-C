@@ -11,13 +11,13 @@ private:
 	unsigned char zn;
 	Organism ***map;
 	std::list<Organism*> initiativeList;
-	std::string information;
-
+	std::string information; 
 	void drawWorld();
 	void drawInstruction(int);
 	unsigned int getTurn();
-
+	void safeGame();
 public:
+	World(std::string);
 	World(int, int);
 	~World();
 	void startGame();
@@ -34,4 +34,6 @@ public:
 	unsigned char getZn();
 	int getSizeX();
 	int getSizeY();
+
+	
 };

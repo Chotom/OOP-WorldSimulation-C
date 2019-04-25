@@ -7,6 +7,12 @@ Antelope::Antelope(int posX, int posY, World& world) : Animal(posX, posY, world)
 	this->canEscape = 1;
 }
 
+Antelope::Antelope(int posX, int posY, World& world, int strength) : Animal(posX, posY, world, strength) {
+	this->initiative = 4;
+	this->symbol = 'A';
+	this->canEscape = 1;
+}
+
 Antelope::~Antelope() {}
 
 bool Antelope::action() {

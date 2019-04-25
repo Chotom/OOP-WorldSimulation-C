@@ -6,6 +6,11 @@ Fox::Fox(int posX, int posY, World& world) : Animal(posX, posY, world) {
 	this->symbol = 'f';
 }
 
+Fox::Fox(int posX, int posY, World& world, int strength) : Animal(posX, posY, world, strength) {
+	this->initiative = 7;
+	this->symbol = 'F';
+}
+
 Fox::~Fox() {}
 
 bool Fox::action() {
